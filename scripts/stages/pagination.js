@@ -47,7 +47,6 @@ export function renderDots(totalPages) {
   const paginationDotsContainer = document.querySelector(".section-chess-stages__pagination-dots");
   
   paginationDotsContainer.innerHTML = "";
-  console.log(paginationDotsContainer);
   for (let i = 1; i <= totalPages; i++) {
     const dot = document.createElement("span");
     dot.classList.add("section-chess-stages__dot");
