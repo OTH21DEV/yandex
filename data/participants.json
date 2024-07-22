@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "Хозе-Рауль Капабланка",
+      "description": "Чемпион мира по шахматам",
+      "image": "assets/card.png"
+    },
+    {
+      "id": 2,
+      "name": "Эммануил Ласкер",
+      "description": "Чемпион мира по шахматам",
+      "image": "assets/card.png"
+    },
+    {
+      "id": 3,
+      "name": "Александр Алехин",
+      "description": "Чемпион мира по шахматам",
+      "image": "assets/card.png"
+    },
+    {
+      "id": 4,
+      "name": "Арон Нимцович",
+      "description": "Чемпион мира по шахматам",
+      "image": "assets/card.png"
+    },
+    {
+      "id": 5,
+      "name": "Рихард Рети",
+      "description": "Чемпион мира по шахматам",
+      "image": "assets/card.png"
+    },
+    {
+      "id": 6,
+      "name": "Остап Бендер",
+      "description": "Гроссмейстер",
+      "image": "assets/card.png"
+    }
+  ]

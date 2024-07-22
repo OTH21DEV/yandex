@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Тестовый лендинг для Международного васюкинского турнира по шахматам." />
+    <title>Тестовый лендинг</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <!-- Main Header Section -->
+    <header class="site-header">
+      <div class="site-header__content">
+        <div class="site-header__logo">
+          <img src="/assets/logo.png" alt="Клуб четырех коней лого" class="site-header__logo-image"/>
+        </div>
+        <div class="site-header__banner">
+          <h1 class="site-header__banner-heading"><span class="site-header__highlight">Превратите уездный город</span> в столицу земного шара</h1>
+          <p class="site-header__banner-subheading">Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам</p>
+          <div class="site-header__banner-buttons">
+            <button class="btn btn-primary">Поддержать шахматную мысль</button>
+            <button class="btn btn-secondary">Подробнее о турнире</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Marquee Section -->
+    <div class="marquee" aria-live="polite">
+      <div class="marquee__content">
+        <span class="marquee__phrase">Дело помощи утопающим — дело рук самих утопающих!</span>
+        <span class="marquee__phrase">Шахматы двигают вперед не только культуру, но и экономику!</span>
+        <span class="marquee__phrase">Лед тронулся, господа присяжные заседатели!</span>
+      </div>
+    </div>
+
+    <!-- Main Content Sections -->
+    <main>
+      <!-- Tournament Support Section -->
+      <section class="section-tournament-support">
+        <h2 class="section-tournament-support__heading">Чтобы поддержать Международный васюкинский турнир посетите лекцию на тему: «Плодотворная дебютная идея»</h2>
+        <img src="/assets/mens.png" alt="Турнир по шахматам" class="section-tournament-support__image" />
+      </section>
+
+      <!-- Simultaneous Play Session Section -->
+      <section class="section-simultaneous-play">
+        <h2 class="section-simultaneous-play__heading">Сеанс одновременной игры в шахматы на 160 досках гроссмейстера О. Бендера</h2>
+
+        <div class="section-simultaneous-play__event-info">
+          <table>
+            <tbody>
+              <tr>
+                <td class="section-simultaneous-play__label">Место проведения:</td>
+                <td class="section-simultaneous-play__info">Клуб «Картонажник»</td>
+              </tr>
+              <tr>
+                <td class="section-simultaneous-play__label">Дата и время мероприятия:</td>
+                <td class="section-simultaneous-play__info">22 июня 1927 г. в 18:00</td>
+              </tr>
+              <tr>
+                <td class="section-simultaneous-play__label">Стоимость входных билетов:</td>
+                <td class="section-simultaneous-play__info">20 коп.</td>
+              </tr>
+              <tr>
+                <td class="section-simultaneous-play__label">Плата за игру:</td>
+                <td class="section-simultaneous-play__info">50 коп.</td>
+              </tr>
+              <tr>
+                <td class="section-simultaneous-play__label">Взнос на телеграммы:</td>
+                <td class="section-simultaneous-play__info">100 руб. 21 руб. 16 коп.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>По всем вопросам обращаться в администрацию к К. Михельсону</p>
+      </section>
+
+      <!-- Chess Stages Section -->
+      <section class="section-chess-stages">
+        <div class="section-chess-stages__header">
+          <h2 class="section-chess-stages__heading">Этапы преображения Васюков</h2>
+          <p class="section-chess-stages__subheading">Будущие источники обогащения васюкинцев</p>
+        </div>
+
+        <!-- Chess stages Accordion -->
+        <div class="section-chess-stages__container" id="section-chess-stages__container"></div>
+
+        <!-- Chess stages Accordion controls-->
+        <div class="section-chess-stages__accordion-controls">
+          <button class="section-chess-stages__arrow-left" aria-label="Предыдущий этап преображения Васюков">&lt;</button>
+          <div class="section-chess-stages__pagination-dots" role="navigation" aria-label="Навигация этапы преображения Васюков"></div>
+          <button class="section-chess-stages__arrow-right" aria-label="Следующий этап преображения Васюков"">&gt;</button>
+        </div>
+      </section>
+
+<!-- Participant Cards Section -->
+<section class="section-participant-cards" aria-live="polite">
+  <div class="section-participant-cards__header">
+    <h2 class="section-participant-cards__heading">Участники соревнований</h2>
+    <div class="section-participant-cards__accordion-controls">
+      <button class="section-participant-cards__arrow-left" aria-label="Предыдущий участник соревнований">&lt;</button>
+      <span class="section-participant-cards__page-info">
+        <span id="section-participant-cards__current-page"></span>/
+        <span id="section-participant-cards__total-pages"></span>
+      </span>
+      <button class="section-participant-cards__arrow-right" aria-label="Следующий участник соревнований">&gt;</button>
+    </div>
+  </div>
+
+  <!-- Participant cards Accordion -->
+  <div class="section-participant-cards__container" id="section-participant-cards__container"></div>
+</section>
+
+    </main>
+       <!-- Footer Section -->
+       <footer class="footer">
+        <div class="footer__marquee" aria-live="polite">
+          <div class="footer__marquee-content">
+            <span class="footer__marquee-phrase">Лед тронулся, господа присяжные заседатели!</span>
+            <span class="footer__marquee-phrase">Планов громадье развернется на Невской перспективе!</span>
+            <span class="footer__marquee-phrase">Триумф шахматной мысли наступит неизбежно!</span>
+          </div>
+        </div>
+      </footer>
+  
+      <script type="module" src="./index.js"></script>
+    </body>
+  </html>

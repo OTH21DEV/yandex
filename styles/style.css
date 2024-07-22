@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+.site-header {
+  width: 1366;
+  height: 700px;
+  position: relative;
+  background-image: url("/assets/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.logo img {
+  width: 245.17px;
+  height: 36px;
+}
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.section-chess-stages__dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #b72424;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.section-chess-stages__dot--active {
+  background-color: #090909;
+}
