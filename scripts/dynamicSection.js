@@ -21,7 +21,7 @@ function createMobileView() {
   
     const span = document.createElement('span');
     span.className = 'lecture-topic';
-    span.innerHTML = 'посетите лекцию на тему: <span class="section-tournament-support__highlight">«Плодотворная дебютная идея»</span>';
+    span.innerHTML = 'посетите лекцию<br> на тему: <span class="section-tournament-support__highlight">«Плодотворная дебютная идея»</span>';
   
     textWrapper.appendChild(heading);
     textWrapper.appendChild(imageWrapper);

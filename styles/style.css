@@ -9,6 +9,7 @@
   --marquee-bg: #f54932;
   --marquee-color: #ffffff;
   --secondary-color: #f54932;
+  --table-line:#D0D0D0
 }
 
 * {
@@ -41,7 +42,7 @@ p {
 }
 .site-header {
   width: 100%;
-  height: 760px;
+  height: 700px;
   position: relative;
   background-image: url("/assets/bg.png");
   background-size: cover;
@@ -189,7 +190,6 @@ p {
 .section-tournament-support {
   display: flex;
   align-items: center;
-
 }
 .content-container {
   display: flex;
@@ -205,6 +205,9 @@ p {
 .section-tournament-support__heading {
   font-size: 36px;
   line-height: 48.6px;
+
+  /* max-width:764px;
+  height:195.43px */
 }
 .section-tournament-support__image {
   width: 100%;
@@ -213,21 +216,98 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width:100%
+  /* width: 1222px; */
 }
 
 .image-wrapper {
   width: 394px;
   height: 250px;
+  margin-left: 64px
 }
 
-.lecture-topic{
+.lecture-topic {
   text-transform: uppercase;
-  color:var(--heading-color)
+  color: var(--heading-color);
 }
 
+/*Simultaneous Play Session Section */
 
-@media screen and (max-width: 375px) {
+.section-simultaneous-play {
+  display:flex;
+  margin-top:44.56px;
+}
+
+.section-simultaneous-play__image-wrapper{
+  width: 525px;
+  margin-left:-27px;
+  margin-right:17px
+  /* height:528px; */
+
+  /* overflow: hidden;  */
+
+
+}
+.section-simultaneous-play__image{
+ object-fit: cover;
+ width: 100%;
+ /* height: 100%; */
+  object-position: center;
+}
+.section-simultaneous-play__content{
+  display:flex;
+  flex-direction: column;
+  margin-top:28px
+  /* width:40% */
+}
+.section-simultaneous-play__heading{
+  font-size:36px;
+  line-height:48.6px;
+
+}
+.highlighted-text{
+  color:var(--secondary-color);
+  font-weight: 700;
+}
+.section-simultaneous-play__event-info{
+  margin-top:60px
+}
+tr{
+  /* padding:16px; */
+  height:56px;
+
+
+}
+tr:not(:last-child) {
+  border-bottom: 2px solid var(--table-line); 
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.section-simultaneous-play__label,.section-simultaneous-play__info{
+  font-family: var(--secondary-font);
+
+  font-size:20px;
+  line-height:24px;
+  color:var(--heading-color);
+  height:24px;
+
+
+}
+.section-simultaneous-play__label{
+  font-weight:400;
+  opacity:70%;
+  border-right: 2px solid var(--table-line);
+  padding:16px 16px 16px 0;
+  width:306px;
+}
+.section-simultaneous-play__info{
+  font-weight: 600;
+  padding:16px 0px 16px 16px;
+  width:398px;
+}
+@media screen and (max-width: 376px) {
   /* Main Header Section */
   .site-header {
     min-height: 812px;
@@ -244,7 +324,7 @@ p {
     background-image: url("/assets/bg_mobile.png");
   }
   .site-header__content {
-    padding: 18px 10px 0 10px;
+    padding: 18px 20px 0 20px;
   }
   .site-header__banner-heading {
     font-size: 36px;
@@ -271,10 +351,18 @@ p {
   .btn.btn-primary {
     margin-bottom: 14px;
   }
+  .btn.btn-primary:active{
+    background-color: var(--banner-btn-hover);
+    color: var(--banner-btn);
+  }
   .btn.btn-secondary {
     background-color: var(--banner-btn-secondary-bg);
     border: none;
     opacity: 90%;
+  }
+  .btn.btn-secondary:active {
+    background-color: var(--banner-btn);
+    color: #ffffff;
   }
   .desktop-break {
     display: none;
@@ -297,7 +385,8 @@ p {
   .main {
     padding: 48px 20px;
   }
-  .section-tournament-support__heading,.lecture-topic {
+  .section-tournament-support__heading,
+  .lecture-topic {
     font-size: 28px;
     line-height: 37.8px;
   }
@@ -311,6 +400,4 @@ p {
     height: 212.56px;
     margin: 24px 0 24.44px 0;
   }
-
-
 }
