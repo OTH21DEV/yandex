@@ -9,6 +9,7 @@
   --marquee-bg: #f54932;
   --marquee-color: #ffffff;
   --secondary-color: #f54932;
+  --tertiary-color:#3057A2;
   --table-line:#D0D0D0
 }
 
@@ -273,7 +274,7 @@ p {
   margin-top:60px
 }
 tr{
-  /* padding:16px; */
+ 
   height:56px;
 
 
@@ -299,14 +300,40 @@ table {
   font-weight:400;
   opacity:70%;
   border-right: 2px solid var(--table-line);
-  padding:16px 16px 16px 0;
+ 
   width:306px;
 }
 .section-simultaneous-play__info{
   font-weight: 600;
-  padding:16px 0px 16px 16px;
   width:398px;
+  padding-left:16px
 }
+table tbody tr:first-child,table tbody tr:last-child  {
+ 
+  height:40px;
+}
+
+.section-simultaneous-play__contact{
+
+font-size:20px;
+line-height: 24px;
+color:var(--tertiary-color);
+margin-top:48px;
+}
+.strike-through {
+  position: relative;
+  margin-right:12px;
+}
+.strike-through::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 2px solid var(--secondary-color);
+}
+
+
 @media screen and (max-width: 376px) {
   /* Main Header Section */
   .site-header {
