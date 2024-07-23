@@ -10,7 +10,7 @@ export function marqueeMeasure() {
     phraseWidth += marqueePhrases[i].offsetWidth;
   }
 
-  document.querySelector(".marquee").style.width = `${phraseWidth}px`;
+//   document.querySelector(".marquee").style.width = `${phraseWidth}px`;
 
   return phraseWidth;
 }

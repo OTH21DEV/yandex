@@ -4,6 +4,7 @@ import { fetchStages } from "./scripts/stages/fetchStages.js";
 import { renderDots, showPageStage, setStages } from "./scripts/stages/pagination.js";
 import { renderStages } from "./scripts/stages/renderStages.js";
 import { marqueeMeasure, marqueeKeyframes } from "./scripts/marquee.js";
+import { adjustContent } from "./scripts/dynamicSection.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
@@ -21,7 +22,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     // marquee measure and keyframe for infinite loop of 3 phrases
     const measuredWidth = marqueeMeasure();
     marqueeKeyframes(measuredWidth);
+  adjustContent()
   } catch (error) {
     console.error("Error fetching", error);
   }
 });
+window.addEventListener('resize', adjustContent);

@@ -4,9 +4,11 @@
   --secondary-font: "Golos Text", sans-serif;
   --logo-color: #595653;
   --banner-btn: #1f1f1f;
+  --banner-btn-hover: #fbce51;
   --banner-btn-secondary-bg: #ffffff;
   --marquee-bg: #f54932;
   --marquee-color: #ffffff;
+  --secondary-color: #f54932;
 }
 
 * {
@@ -15,7 +17,8 @@
   box-sizing: border-box;
 }
 
-h1 {
+h1,
+h2 {
   font-family: var(--heading-font);
   color: var(--heading-color);
   text-transform: uppercase;
@@ -38,7 +41,7 @@ p {
 }
 .site-header {
   width: 100%;
-  height: 700px;
+  height: 760px;
   position: relative;
   background-image: url("/assets/bg.png");
   background-size: cover;
@@ -95,7 +98,6 @@ p {
   font-weight: 500;
   font-size: 16px;
   text-align: center;
-  /* padding:20px */
 }
 
 .btn.btn-primary {
@@ -104,14 +106,20 @@ p {
   line-height: 20.8px;
   margin-right: 16px;
 }
-
+.btn.btn-primary:hover {
+  background-color: var(--banner-btn-hover);
+  color: var(--banner-btn);
+}
 .btn.btn-secondary {
   background-color: transparent;
   color: var(--banner-btn);
   line-height: 20.8px;
   border-color: var(--banner-btn);
 }
-
+.btn.btn-secondary:hover {
+  background-color: var(--banner-btn);
+  color: #ffffff;
+}
 .pagination-dots {
   display: flex;
   justify-content: center;
@@ -140,6 +148,8 @@ p {
   overflow: hidden;
   position: absolute;
   padding: 18px 12px;
+  bottom: -60px;
+  width: 100%;
 }
 
 .marquee__content {
@@ -170,9 +180,58 @@ p {
   height:6px; */
 }
 
+/*Main Content Sections */
+
+.main {
+  padding: 140px 72px;
+}
+/* Tournament Support Section */
+.section-tournament-support {
+  display: flex;
+  align-items: center;
+
+}
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.section-tournament-support__highlight {
+  font-family: var(--heading-font);
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+.section-tournament-support__heading {
+  font-size: 36px;
+  line-height: 48.6px;
+}
+.section-tournament-support__image {
+  width: 100%;
+}
+.text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.image-wrapper {
+  width: 394px;
+  height: 250px;
+}
+
+.lecture-topic{
+  text-transform: uppercase;
+  color:var(--heading-color)
+}
+
+
 @media screen and (max-width: 375px) {
   /* Main Header Section */
-
+  .site-header {
+    min-height: 812px;
+  }
   .site-header__logo {
     min-width: 213px;
     height: 32px;
@@ -224,6 +283,7 @@ p {
   .marquee {
     height: 38px;
     padding: 10px 12px;
+    bottom: 0;
   }
   .marquee__phrase {
     font-size: 16px;
@@ -233,4 +293,24 @@ p {
     margin-left: 12px;
     margin-right: 12px;
   }
+  /* Tournament Support Section */
+  .main {
+    padding: 48px 20px;
+  }
+  .section-tournament-support__heading,.lecture-topic {
+    font-size: 28px;
+    line-height: 37.8px;
+  }
+
+  .text-wrapper {
+    flex-direction: column;
+  }
+
+  .image-wrapper {
+    width: 335px;
+    height: 212.56px;
+    margin: 24px 0 24.44px 0;
+  }
+
+
 }
