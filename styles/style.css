@@ -33,7 +33,9 @@ p {
   font-style: normal;
 }
 
-/* Main Header Section */
+/* 
+Main Header Section 
+*/
 
 .site-header__banner-subheading {
   font-size: 18px;
@@ -141,7 +143,9 @@ p {
   background-color: #090909;
 }
 
-/* Header Marquee Section */
+/* 
+Header Marquee Section 
+*/
 
 .marquee {
   background-color: var(--marquee-bg);
@@ -178,16 +182,20 @@ p {
   content: "•";
   margin-left: 15px;
   margin-right: 15px;
-  /* width:6px;
-  height:6px; */
 }
 
-/*Main Content Sections */
+/*
+Main Content Sections 
+*/
 
 .main {
   padding: 140px 72px;
 }
-/* Tournament Support Section */
+
+/* 
+Tournament Support Section 
+*/
+
 .section-tournament-support {
   display: flex;
   align-items: center;
@@ -206,9 +214,6 @@ p {
 .section-tournament-support__heading {
   font-size: 36px;
   line-height: 48.6px;
-
-  /* max-width:764px;
-  height:195.43px */
 }
 .section-tournament-support__image {
   width: 100%;
@@ -218,7 +223,6 @@ p {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  /* width: 1222px; */
 }
 
 .image-wrapper {
@@ -232,7 +236,9 @@ p {
   color: var(--heading-color);
 }
 
-/*Simultaneous Play Session Section */
+/*
+Simultaneous Play Session Section
+*/
 
 .section-simultaneous-play {
   display: flex;
@@ -254,7 +260,6 @@ p {
   display: flex;
   flex-direction: column;
   margin-top: 28px;
-  /* width:40% */
 }
 .section-simultaneous-play__heading {
   font-size: 36px;
@@ -284,14 +289,11 @@ table {
   font-size: 20px;
   line-height: 24px;
   color: var(--heading-color);
-
-  /* height: 24px; */
 }
 .section-simultaneous-play__label {
   font-weight: 400;
   opacity: 70%;
   border-right: 2px solid var(--table-line);
-
   width: 306px;
 }
 .section-simultaneous-play__info {
@@ -323,8 +325,59 @@ table tbody tr:last-child {
   border-top: 2px solid var(--secondary-color);
 }
 
+/*
+Chess Stages Section 
+*/
+
+.section-chess-stages{
+  margin-top:110px;
+}
+.section-chess-stages__header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom:64px
+}
+.section-chess-stages__heading,.highlight {
+  font-family: var(--heading-font);
+  font-size:54px;
+  line-height:64.8px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color:var(--heading-color)
+}
+.highlight-wrapper{
+  display:flex;
+  align-items: center;
+
+}
+.highlight-subheading{
+  font-family: var(--secondary-font);
+  color:var(--tertiary-color);
+  font-weight: 400;
+  font-size:20px;
+  line-height:24px;
+  padding-right: 5px
+ 
+}
+.section-chess-stages__subheading{
+  display:flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  margin-left:20px;
+  width:280px
+}
+
+
+
+
+
+
+
 @media screen and (max-width: 376px) {
-  /* Main Header Section */
+  /*
+  Main Header Section 
+  */
+
   .site-header {
     min-height: 812px;
   }
@@ -383,7 +436,11 @@ table tbody tr:last-child {
   .desktop-break {
     display: none;
   }
-  /* Header Marquee Section */
+
+  /* 
+  Header Marquee Section 
+  */
+
   .marquee {
     height: 38px;
     padding: 10px 12px;
@@ -397,7 +454,11 @@ table tbody tr:last-child {
     margin-left: 12px;
     margin-right: 12px;
   }
-  /* Tournament Support Section */
+
+  /* 
+  Tournament Support Section 
+  */
+
   .main {
     padding: 48px 20px;
   }
@@ -417,7 +478,9 @@ table tbody tr:last-child {
     margin: 24px 0 24.44px 0;
   }
 
-  /*Simultaneous Play Session Section */
+  /*
+  Simultaneous Play Session Section 
+  */
 
   .section-simultaneous-play {
     flex-direction: column;
@@ -443,12 +506,12 @@ table tbody tr:last-child {
   }
   .section-simultaneous-play__info {
     padding-left: 0;
-    width:335px
+    width: 335px;
   }
   .section-simultaneous-play__label {
     border: none;
     padding-bottom: 12px;
-    width:335px
+    width: 335px;
   }
   .section-simultaneous-play__event-info {
     margin-top: 28px;
@@ -459,8 +522,36 @@ table tbody tr:last-child {
   }
 
   .section-simultaneous-play__contact {
-    font-size:18px;
-    line-height:21.6px;
-    margin-top:24px
+    font-size: 18px;
+    line-height: 21.6px;
+    margin-top: 24px;
+  }
+
+/*
+Chess Stages Section 
+*/
+.section-chess-stages__header{
+  margin-bottom:0
+}
+  .highlight-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-chess-stages__heading,.highlight {
+ 
+    font-size:36px;
+    line-height:39.6px;
+ 
+ 
+  }
+  .highlight-subheading{
+    margin-left:0;
+  font-size:18px;
+    /* padding-right: 5px */
+  }
+  .section-chess-stages__subheading{
+    flex-wrap:wrap;
+    flex-direction: row;
+    margin:12px 0 20px 0;
   }
 }
