@@ -329,50 +329,143 @@ table tbody tr:last-child {
 Chess Stages Section 
 */
 
-.section-chess-stages{
-  margin-top:110px;
+.section-chess-stages {
+  margin-top: 110px;
 }
 .section-chess-stages__header {
   display: flex;
   flex-direction: column;
-  margin-bottom:64px
+  margin-bottom: 54px;
 }
-.section-chess-stages__heading,.highlight {
+.section-chess-stages__heading,
+.highlight {
   font-family: var(--heading-font);
-  font-size:54px;
-  line-height:64.8px;
+  font-size: 54px;
+  line-height: 64.8px;
   font-weight: 400;
   text-transform: uppercase;
-  color:var(--heading-color)
+  color: var(--heading-color);
 }
-.highlight-wrapper{
-  display:flex;
+.highlight-wrapper {
+  display: flex;
   align-items: center;
-
 }
-.highlight-subheading{
+.highlight-subheading {
   font-family: var(--secondary-font);
-  color:var(--tertiary-color);
+  color: var(--tertiary-color);
   font-weight: 400;
-  font-size:20px;
-  line-height:24px;
-  padding-right: 5px
- 
+  font-size: 20px;
+  line-height: 24px;
+  padding-right: 5px;
 }
-.section-chess-stages__subheading{
-  display:flex;
+.section-chess-stages__subheading {
+  display: flex;
   flex-wrap: wrap;
   /* flex-direction: column; */
-  margin-left:20px;
-  width:280px
+  margin-left: 20px;
+  width: 280px;
+}
+
+/*
+Chess stages Accordion
+*/
+.section-chess-stages__accordion-controls {
+  display: none;
+}
+
+.section-chess-stages__stage-content p,
+.section-chess-stages__stage-number p {
+  font-family: var(--secondary-font);
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--heading-color);
+}
+.section-chess-stages__stage-content p {
+  font-weight: 500;
+}
+.section-chess-stages__stage-number p {
+  font-weight: 600;
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  border-radius: 60px;
+  text-align: center;
+  padding-top: 5px;
+  margin-right: 16px;
+}
+
+#section-chess-stages__container {
+  margin-bottom: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+
+  grid-template-areas:
+    "card1 card2 card3"
+    "card4 card5 card3"
+    "card6 card7 card7";
+}
+
+#stage-1 {
+  grid-area: card1;
+}
+#stage-2 {
+  grid-area: card2;
+}
+#stage-3 {
+  grid-area: card3;
+}
+#stage-4 {
+  grid-area: card4;
+}
+#stage-5 {
+  grid-area: card5;
+}
+#stage-6 {
+  grid-area: card6;
+}
+#stage-7 {
+  grid-area: card7;
+}
+
+.section-chess-stages__stage-item {
+  background-color: #fff;
+
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  background-image: url("/assets/stage_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#stage-1,
+#stage-2,
+#stage-4,
+#stage-5 {
+  height: 112px;
+}
+
+#stage-3 {
+  height: 244px;
+}
+
+#stage-7 {
+  height: 142px;
 }
 
 
 
-
-
-
-
+@media screen and (max-width: 768px) {
+  /*
+Chess stages Accordion
+*/
+  .section-chess-stages__accordion-controls {
+    display: flex;
+  }
+}
 @media screen and (max-width: 376px) {
   /*
   Main Header Section 
@@ -527,31 +620,35 @@ Chess Stages Section
     margin-top: 24px;
   }
 
-/*
+  /*
 Chess Stages Section 
 */
-.section-chess-stages__header{
-  margin-bottom:0
-}
+  .section-chess-stages__header {
+    margin-bottom: 0;
+  }
   .highlight-wrapper {
     flex-direction: column;
     align-items: flex-start;
   }
-  .section-chess-stages__heading,.highlight {
- 
-    font-size:36px;
-    line-height:39.6px;
- 
- 
+  .section-chess-stages__heading,
+  .highlight {
+    font-size: 36px;
+    line-height: 39.6px;
   }
-  .highlight-subheading{
-    margin-left:0;
-  font-size:18px;
-    /* padding-right: 5px */
+  .highlight-subheading {
+    margin-left: 0;
+    font-size: 18px;
   }
-  .section-chess-stages__subheading{
-    flex-wrap:wrap;
+  .section-chess-stages__subheading {
+    flex-wrap: wrap;
     flex-direction: row;
-    margin:12px 0 20px 0;
+    margin: 12px 0 20px 0;
   }
+
+  /*
+Chess stages Accordion
+*/
+  /* .section-chess-stages__accordion-controls {
+    display: flex;
+  } */
 }

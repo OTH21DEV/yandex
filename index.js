@@ -7,22 +7,24 @@ import { marqueeMeasure, marqueeKeyframes } from "./scripts/marquee.js";
 import { adjustContent } from "./scripts/dynamicSection.js";
 import { applyLineBreaks } from "./scripts/lineBreaks.js";
 
+let stagesData = [];
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     const participantsData = await fetchParticipants();
-    const stagesData = await fetchStages();
+    stagesData = await fetchStages();
+
+    setStages(stagesData);
+    renderDots(stagesData.length);
+
     setParticipants(participantsData);
 
     showPage(1);
     startAutoSlide();
-    //
-    setStages(stagesData);
-    showPageStage(1);
-    renderDots(stagesData.length);
-    renderStages(stagesData);
-    // marquee measure and keyframe for infinite loop of 3 phrases
+
+    // Measure marquee
     const measuredWidth = marqueeMeasure();
     marqueeKeyframes(measuredWidth);
+
     adjustContent();
     applyLineBreaks();
   } catch (error) {
@@ -31,6 +33,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function handleResize() {
+  setStages(stagesData);
+  renderDots(stagesData.length);
   adjustContent();
   applyLineBreaks();
 }

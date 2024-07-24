@@ -5,10 +5,18 @@ let stages = [];
 let currentPage = 1;
 
 /**
- * Determines the number of stages card to display per page based on screen width.
+ * Determines the number of stages card to display per
+ *  page based on screen width.
  */
-function getItemsPerPage() {
-  return window.innerWidth >= 768 ? stages.length : 1;
+function getItemsPerPage(page) {
+ 
+  if (window.innerWidth >= 768) {
+    console.log("desktop")
+    return stages.length; 
+  } else {
+    console.log("mobile")
+    return page % 2 === 1 ? 2 : 1;
+  }
 }
 
 /**
@@ -17,6 +25,9 @@ function getItemsPerPage() {
  */
 export function setStages(data) {
   stages = data;
+
+   showPageStage(1);
+  
 }
 /**
  * Renders the specified page, slicing the appropriate subset of stage data
@@ -25,15 +36,21 @@ export function setStages(data) {
  */
 
 export function showPageStage(page) {
-  const itemsPerPage = getItemsPerPage();
-  //slice stages data (display 1 per page if mobile view)
+  const itemsPerPage = getItemsPerPage(page);
+  //slice stages data (display 1 or 2 per page if mobile view)
   if (window.innerWidth <= 768) {
     currentPage = page;
-    const startIndex = (page - 1) * itemsPerPage;
+   
+    let startIndex = 0;
+    for (let i = 1; i < page; i++) {
+      startIndex += getItemsPerPage(i);
+    }
+
     const endIndex = startIndex + itemsPerPage;
+
     renderStages(stages.slice(startIndex, endIndex));
-    updateDots(currentPage)
-    // renderDots(totalPages)
+    updateDots(currentPage);
+    
   } else {
     renderStages(stages);
   }
@@ -43,17 +60,22 @@ export function showPageStage(page) {
  * @param {number} totalPages - Total number of pages.
  */
 
+
 export function renderDots(totalPages) {
-  const paginationDotsContainer = document.querySelector(".section-chess-stages__pagination-dots");
-  
-  paginationDotsContainer.innerHTML = "";
-  for (let i = 1; i <= totalPages; i++) {
-    const dot = document.createElement("span");
-    dot.classList.add("section-chess-stages__dot");
-    if (i === currentPage) {
-      dot.classList.add("section-chess-stages__dot--active");
+  if (window.innerWidth <= 768) {
+    totalPages = countPages(totalPages);
+
+    const paginationDotsContainer = document.querySelector(".section-chess-stages__pagination-dots");
+
+    paginationDotsContainer.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+      const dot = document.createElement("span");
+      dot.classList.add("section-chess-stages__dot");
+      if (i === currentPage) {
+        dot.classList.add("section-chess-stages__dot--active");
+      }
+      paginationDotsContainer.appendChild(dot);
     }
-    paginationDotsContainer.appendChild(dot);
   }
 }
 
@@ -73,25 +95,36 @@ function updateDots(currentPage) {
   });
 }
 
-
-
 // Left arrow button for pagination
 document.querySelector(".section-chess-stages__arrow-left").addEventListener("click", () => {
   if (currentPage > 1) {
     showPageStage(currentPage - 1);
-    updateDots(currentPage)
+    updateDots(currentPage);
   }
 });
 // right arrow button for pagination
 document.querySelector(".section-chess-stages__arrow-right").addEventListener("click", () => {
   if (currentPage < Math.ceil(stages.length / getItemsPerPage())) {
     showPageStage(currentPage + 1);
-    updateDots(currentPage)
+    updateDots(currentPage);
   }
 });
 
-
-
-window.addEventListener("resize", () => {
-  showPageStage(currentPage);
-});
+/**
+ * Counts the number of pages for mobile view 
+ * @param {number} totalItems - the number of all cards
+ * @returns {number} - the number of pages
+ */
+function countPages(totalItems) {
+  let count = 0;
+  for (let i = 1; i < totalItems; i++) {
+    if (i % 2 === 0) {
+      count += 1;
+      totalItems -= 1;
+    } else {
+      count += 2;
+      totalItems-= 2;
+    }
+  }
+  return count;
+}
