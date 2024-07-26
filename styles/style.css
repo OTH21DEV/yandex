@@ -11,6 +11,8 @@
   --secondary-color: #f54932;
   --tertiary-color: #3057a2;
   --table-line: #d0d0d0;
+  --pagination-dot-bg: #d9d9d9;
+  --arrow-bg-disabled: #d6d6d6;
 }
 
 * {
@@ -124,25 +126,62 @@ Main Header Section
   background-color: var(--banner-btn);
   color: #ffffff;
 }
-.pagination-dots {
+/* .pagination-dots {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+} */
+.section-chess-stages__accordion-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .section-chess-stages__dot {
   height: 10px;
   width: 10px;
-  margin: 0 5px;
-  background-color: #b72424;
+  margin-right: 6px;
+  background-color: var(--pagination-dot-bg);
   border-radius: 50%;
   display: inline-block;
 }
 
 .section-chess-stages__dot--active {
-  background-color: #090909;
+  background-color: var(--heading-color);
+}
+.section-chess-stages__arrow-right,
+.section-chess-stages__arrow-left {
+  width: 36px;
+  height: 36px;
+  border: 1px solid transparent;
+  border-radius: 36px;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
 }
 
+.section-chess-stages__arrow--touch-hover-effect {
+  background-color: var(--banner-btn-hover);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.section-chess-stages__arrow-left {
+  transform: rotate(180deg);
+  margin-right: 16px;
+}
+.section-chess-stages__arrow-right {
+  margin-left: 10px;
+}
+.section-chess-stages__arrow-left--disabled,
+.section-chess-stages__arrow-right--disabled {
+  background-color: var(--arrow-bg-disabled);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.section-chess-stages__arrow-right--default,
+.section-chess-stages__arrow-left--default {
+  background-color: var(--heading-color);
+}
 /* 
 Header Marquee Section 
 */
@@ -382,6 +421,13 @@ Chess stages Accordion
 }
 .section-chess-stages__stage-content p {
   font-weight: 500;
+  width: 302px;
+  height: 72px;
+}
+
+.section-chess-stages__container .section-chess-stages__stage-item:last-child .section-chess-stages__stage-content p {
+  width: 446px;
+  height: 96px;
 }
 .section-chess-stages__stage-number p {
   font-weight: 600;
@@ -435,7 +481,8 @@ Chess stages Accordion
   padding: 20px;
   box-sizing: border-box;
   display: flex;
-  background-image: url("/assets/stage_bg.png");
+  /* background-image: url("/assets/stage_bg.png"); */
+  background-image: url("/assets/card_bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -444,19 +491,39 @@ Chess stages Accordion
 #stage-1,
 #stage-2,
 #stage-4,
-#stage-5 {
+#stage-5,
+#stage-6 {
+  /* width:394px; */
   height: 112px;
 }
-
+#stage-6 {
+  height: 136px;
+}
 #stage-3 {
+  /* width:394px; */
   height: 244px;
 }
 
 #stage-7 {
-  height: 142px;
+  /* width:808px; */
+  height: 136px;
+  position: relative;
 }
 
-
+/*Card with plane img*/
+#stage-7::after {
+  content: "";
+  position: absolute;
+  background-image: url("/assets/plane.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 374.8px;
+  right: -3.5em;
+  height: 194px;
+  display: block;
+  bottom: 1.5em;
+}
 
 @media screen and (max-width: 768px) {
   /*
@@ -464,6 +531,77 @@ Chess stages Accordion
 */
   .section-chess-stages__accordion-controls {
     display: flex;
+  }
+
+  /**/
+
+  #section-chess-stages__container {
+    display: inherit;
+    margin-top: 128px;
+  }
+  .section-chess-stages__subheading {
+    width: 100%;
+  }
+  .section-chess-stages__stage-item {
+    height: 150px;
+  }
+  #stage-1,
+  #stage-2 {
+    height: 150px;
+  }
+  #stage-5 {
+    height: 194.8px;
+  }
+  #stage-4 {
+    height: auto;
+  }
+  #stage-3,
+  #stage-6,
+  #stage-7 {
+    height: 300px;
+  }
+  .section-chess-stages__container .section-chess-stages__stage-item:last-child .section-chess-stages__stage-content p {
+    width: inherit;
+  }
+
+  .section-chess-stages__stage-content p {
+    width: 100%;
+    font-size: 18px;
+    line-height: 21.6px;
+    height: unset;
+  }
+  #stage-1,
+  #stage-3,
+  #stage-4,
+  #stage-6,
+  #stage-7 {
+    padding: 62px 24px 0px 20px;
+  }
+  #stage-2,
+  #stage-5 {
+    padding-top: 28px;
+  }
+  #stage-7::after {
+    display: none;
+  }
+
+  #stage-1 {
+    position: relative;
+  }
+  /*Card with plane img*/
+  #stage-1::after {
+    content: "";
+    position: absolute;
+    background-image: url("/assets/plane.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 335px;
+    right: -0.8em;
+    height: 182px;
+    display: block;
+    bottom: 5.8em;
+    transform: rotate(-4deg);
   }
 }
 @media screen and (max-width: 376px) {
@@ -648,7 +786,79 @@ Chess Stages Section
   /*
 Chess stages Accordion
 */
-  /* .section-chess-stages__accordion-controls {
-    display: flex;
-  } */
+
+  #section-chess-stages__container {
+    display: inherit;
+    margin: 128px 0 28px 0;
+  }
+  .section-chess-stages__subheading {
+    width: 100%;
+  }
+  .section-chess-stages__stage-item {
+    height: 150px;
+  }
+  #stage-1,
+  #stage-2 {
+    height: 150px;
+  }
+  #stage-5 {
+    height: 194.8px;
+  }
+  #stage-4 {
+    height: auto;
+  }
+  #stage-3,
+  #stage-6,
+  #stage-7 {
+    height: 300px;
+  }
+  .section-chess-stages__container .section-chess-stages__stage-item:last-child .section-chess-stages__stage-content p {
+    width: inherit;
+  }
+
+  .section-chess-stages__stage-content p {
+    width: 100%;
+    font-size: 18px;
+    line-height: 21.6px;
+    height: unset;
+  }
+  #stage-1,
+  #stage-3,
+  #stage-4,
+  #stage-6,
+  #stage-7 {
+    padding: 62px 24px 0px 20px;
+  }
+  #stage-2,
+  #stage-5 {
+    padding-top: 28px;
+  }
+  #stage-7::after {
+    display: none;
+  }
+
+  #stage-1 {
+    position: relative;
+  }
+  /*Card with plane img*/
+  #stage-1::after {
+    content: "";
+    position: absolute;
+    background-image: url("/assets/plane.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 335px;
+    right: -0.8em;
+    height: 182px;
+    display: block;
+    bottom: 5.8em;
+    transform: rotate(-4deg);
+  }
+/*
+Participant Cards Section
+*/
+  .section-participant-cards{
+    margin-top:120px;
+  }
 }
