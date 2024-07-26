@@ -1,7 +1,7 @@
 :root {
   --heading-font: "Merriweather", serif;
-  --heading-color: #313131;
   --secondary-font: "Golos Text", sans-serif;
+  --heading-color: #313131;
   --logo-color: #595653;
   --banner-btn: #1f1f1f;
   --banner-btn-hover: #fbce51;
@@ -13,6 +13,7 @@
   --table-line: #d0d0d0;
   --pagination-dot-bg: #d9d9d9;
   --arrow-bg-disabled: #d6d6d6;
+  --footer-bg: #e9ded4;
 }
 
 * {
@@ -116,25 +117,26 @@ Main Header Section
   line-height: 20.8px;
   margin-right: 16px;
 }
-.btn.btn-primary:hover {
-  background-color: var(--banner-btn-hover);
-  color: var(--banner-btn);
-}
+
 .btn.btn-secondary {
   background-color: transparent;
   color: var(--banner-btn);
   line-height: 20.8px;
   border-color: var(--banner-btn);
 }
+.btn.btn-primary:hover {
+  background-color: var(--banner-btn-hover);
+  color: var(--banner-btn);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
 .btn.btn-secondary:hover {
   background-color: var(--banner-btn);
   color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
-/* .pagination-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-} */
+
 .section-chess-stages__accordion-controls {
   display: flex;
   justify-content: center;
@@ -221,9 +223,9 @@ Header Marquee Section
   height: 60px;
   display: flex;
   overflow: hidden;
-  position: absolute;
+  /* position: absolute; */
   padding: 18px 12px;
-  bottom: -60px;
+  /* bottom: -60px; */
   width: 100%;
 }
 
@@ -258,7 +260,7 @@ Main Content Sections
 */
 
 .main {
-  padding: 140px 72px;
+  padding: 106.92px 72px 140px 72px;
 }
 
 /* 
@@ -592,6 +594,15 @@ Participant Cards Section
 .section-participant-cards__card-item {
   padding: 0 37px;
 }
+.section-participant-cards__card-image {
+  width: 320px;
+  height: 320px;
+}
+.section-participant-cards__card-image img {
+  width: 100%;
+  height: 100%;
+}
+
 .section-participant-cards__card-content {
   display: flex;
   flex-direction: column;
@@ -713,6 +724,21 @@ Chess stages Accordion
     transform: rotate(-4deg);
   }
 }
+
+/*
+Footer Section
+*/
+.footer {
+  background-color: var(--footer-bg);
+}
+.footer__content {
+  font-size: 16px;
+  line-height: 19.2px;
+  color: var(--heading-color);
+  opacity: 60%;
+  padding: 40px 72px 72px 72px;
+}
+
 @media screen and (max-width: 376px) {
   /*
   Main Header Section 
@@ -720,6 +746,7 @@ Chess stages Accordion
 
   .site-header {
     min-height: 812px;
+    position: relative;
   }
   .site-header__logo {
     min-width: 213px;
@@ -760,19 +787,31 @@ Chess stages Accordion
   .btn.btn-primary {
     margin-bottom: 14px;
   }
-  .btn.btn-primary:active {
+  /* .btn.btn-primary:active {
     background-color: var(--banner-btn-hover);
     color: var(--banner-btn);
-  }
+  } */
   .btn.btn-secondary {
     background-color: var(--banner-btn-secondary-bg);
     border: none;
     opacity: 90%;
   }
-  .btn.btn-secondary:active {
+
+  .primary-touch-hover-effect {
+    background-color: var(--banner-btn-hover);
+    color: var(--banner-btn);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  .secondary-touch-hover-effect{
     background-color: var(--banner-btn);
     color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
   }
+
+
+  
   .desktop-break {
     display: none;
   }
@@ -784,6 +823,11 @@ Chess stages Accordion
   .marquee {
     height: 38px;
     padding: 10px 12px;
+
+    /* bottom: 0; */
+  }
+  #marquee-header {
+    position: absolute;
     bottom: 0;
   }
   .marquee__phrase {
@@ -800,7 +844,7 @@ Chess stages Accordion
   */
 
   .main {
-    padding: 48px 20px;
+    padding: 48px 20px 100px 20px
   }
   .section-tournament-support__heading,
   .lecture-topic {
@@ -969,5 +1013,45 @@ Participant Cards Section
 */
   .section-participant-cards {
     margin-top: 120px;
+    position: relative;
+  }
+
+  .section-participant-cards__header {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .section-participant-cards__heading {
+    font-size: 36px;
+    line-height: 39.6px;
+  }
+  .section-participant-cards__accordion-controls {
+    position: absolute;
+    bottom: -80px;
+  }
+  .section-participant-cards__card-image {
+    width: 244px;
+    height: 244px;
+  }
+  .section-participant-cards__card-item {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .section-participant-cards__arrow-right,
+  .section-participant-cards__arrow-left {
+    width: 36px;
+    height: 36px;
+  }
+
+  /*
+Footer Section
+*/
+
+  .footer__content {
+    padding: 40px 20px 60px 20px;
   }
 }
