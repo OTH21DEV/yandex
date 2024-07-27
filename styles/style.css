@@ -46,9 +46,10 @@ Main Header Section
 
 .site-header__banner-subheading {
   font-size: 18px;
-  line-height: 1.3;
+  line-height: 23.4px;
   text-align: center;
   margin-bottom: 40px;
+  color: var(--heading-color);
 }
 .site-header {
   width: 100%;
@@ -76,9 +77,9 @@ Main Header Section
   display: flex;
   flex-direction: column;
   font-size: 60px;
-  /* height:264px; */
+
   margin: 62px 0 24px 0;
-  line-height: 1.1;
+  line-height: 66px;
 }
 .site-header__logo {
   display: flex;
@@ -305,6 +306,7 @@ Tournament Support Section
 .lecture-topic {
   text-transform: uppercase;
   color: var(--heading-color);
+  font-family: var(--heading-font);
 }
 
 /*
@@ -376,12 +378,19 @@ table tbody tr:first-child,
 table tbody tr:last-child {
   height: 40px;
 }
+table tbody tr:first-child td {
+  padding-bottom: 16px;
+}
+
+table tbody tr:last-child td {
+  padding-top: 16px;
+}
 
 .section-simultaneous-play__contact {
   font-size: 20px;
   line-height: 24px;
   color: var(--tertiary-color);
-  margin-top: 48px;
+  margin: 48px 0 200px 0;
 }
 .strike-through {
   position: relative;
@@ -400,9 +409,9 @@ table tbody tr:last-child {
 Chess Stages Section 
 */
 
-.section-chess-stages {
+/* .section-chess-stages {
   margin-top: 110px;
-}
+} */
 .section-chess-stages__header {
   display: flex;
   flex-direction: column;
@@ -466,9 +475,11 @@ Chess stages Accordion
   width: 36px;
   height: 36px;
   background-color: #ffffff;
-  border-radius: 60px;
+  border-radius: 50%;
   text-align: center;
-  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 16px;
 }
 
@@ -582,10 +593,12 @@ Participant Cards Section
 #section-participant-cards__total-pages,
 .section-participant-cards__slash {
   opacity: 60%;
+  color: #313131;
   /* margin-left:1px */
 }
 #section-participant-cards__current-page {
   margin-right: 1px;
+  color: #313131;
 }
 
 .section-participant-cards__container {
@@ -645,6 +658,27 @@ Participant Cards Section
   transition: all 0.3s ease;
 }
 
+/*
+Footer Section
+*/
+.footer {
+  background-color: var(--footer-bg);
+}
+.footer__content {
+  font-size: 16px;
+  line-height: 19.2px;
+  color: var(--heading-color);
+  opacity: 60%;
+  padding: 40px 72px 72px 72px;
+}
+@media screen and (min-width: 1920px) {
+  .site-header {
+    background-image: url("/assets/bg_large.png");
+  }
+  .site-header__content {
+    padding-left: 349px;
+  }
+}
 @media screen and (max-width: 768px) {
   /*
 Chess stages Accordion
@@ -725,20 +759,6 @@ Chess stages Accordion
   }
 }
 
-/*
-Footer Section
-*/
-.footer {
-  background-color: var(--footer-bg);
-}
-.footer__content {
-  font-size: 16px;
-  line-height: 19.2px;
-  color: var(--heading-color);
-  opacity: 60%;
-  padding: 40px 72px 72px 72px;
-}
-
 @media screen and (max-width: 376px) {
   /*
   Main Header Section 
@@ -760,7 +780,7 @@ Footer Section
     background-image: url("/assets/bg_mobile.png");
   }
   .site-header__content {
-    padding: 18px 20px 0 20px;
+    padding: 20px 20px 0 20px;
   }
   .site-header__banner-heading {
     font-size: 36px;
@@ -776,6 +796,8 @@ Footer Section
   .site-header__banner-subheading {
     margin-bottom: 32px;
     text-align: left;
+    font-size: 18px;
+    line-height: 23.4px;
   }
   .site-header__banner-buttons {
     flex-direction: column;
@@ -803,15 +825,13 @@ Footer Section
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
   }
-  .secondary-touch-hover-effect{
+  .secondary-touch-hover-effect {
     background-color: var(--banner-btn);
     color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
   }
 
-
-  
   .desktop-break {
     display: none;
   }
@@ -830,6 +850,9 @@ Footer Section
     position: absolute;
     bottom: 0;
   }
+  #marquee-footer {
+    margin-top: 80px;
+  }
   .marquee__phrase {
     font-size: 16px;
     line-height: 17.6px;
@@ -844,12 +867,13 @@ Footer Section
   */
 
   .main {
-    padding: 48px 20px 100px 20px
+    padding: 48px 20px 100px 20px;
   }
   .section-tournament-support__heading,
   .lecture-topic {
     font-size: 28px;
     line-height: 37.8px;
+    font-family: var(--heading-font);
   }
 
   .text-wrapper {
@@ -865,10 +889,12 @@ Footer Section
   /*
   Simultaneous Play Session Section 
   */
-
+  .section-simultaneous-play__content {
+    margin-top: 24px;
+  }
   .section-simultaneous-play {
     flex-direction: column;
-    margin: 21px 0 120px 0;
+    margin: 34px 0 120px 0;
   }
   .section-simultaneous-play__image-wrapper {
     width: 100vw;
@@ -904,11 +930,20 @@ Footer Section
   table tbody tr:last-child {
     height: inherit;
   }
-
+  table tbody tr:first-child {
+    padding-bottom: 0px;
+  }
+  table tbody tr:first-child .section-simultaneous-play__label {
+    padding-bottom: 12px;
+  }
+  table tbody tr:last-child .section-simultaneous-play__label,
+  table tbody tr:last-child .section-simultaneous-play__info {
+    padding-top: 0px;
+  }
   .section-simultaneous-play__contact {
     font-size: 18px;
     line-height: 21.6px;
-    margin-top: 24px;
+    margin: 24px 0 0 0;
   }
 
   /*
@@ -929,6 +964,8 @@ Chess Stages Section
   .highlight-subheading {
     margin-left: 0;
     font-size: 18px;
+    font-size: 18px;
+    line-height: 21.6px;
   }
   .section-chess-stages__subheading {
     flex-wrap: wrap;
@@ -1011,6 +1048,9 @@ Chess stages Accordion
   /*
 Participant Cards Section
 */
+  .section-participant-cards__card-content h4 {
+    margin-top: 8px;
+  }
   .section-participant-cards {
     margin-top: 120px;
     position: relative;
