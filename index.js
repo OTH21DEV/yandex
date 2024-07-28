@@ -55,10 +55,15 @@ function handleResize() {
 
   // setStages(stagesData);
 
-  // adjustContent();
-  // applyLineBreaks();
+  adjustContent();
+  applyLineBreaks();
+
+
   addTouchEventListener(btnPrimary, "primary-touch-hover-effect");
 addTouchEventListener(btnSecondary, "secondary-touch-hover-effect")
+
+
+
 }
 
 window.addEventListener("resize", handleResize);
