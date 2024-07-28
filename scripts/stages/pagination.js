@@ -1,4 +1,5 @@
 import { renderStages } from "./renderStages.js";
+import { addTouchEventListener } from "../touchEventListener.js";
 
 let stages = [];
 let currentPage = 1;
@@ -6,6 +7,9 @@ let totalPages = 0;
 
 /**
  * Determines the number of stages card to display per page based on screen width.
+ * @param {*} page the page number of pagination
+ * @returns {number} the number of stages card to display (total for desktop,
+ * 2 or 1 per page of pagination if mobile)
  */
 function getItemsPerPage(page) {
   if (window.innerWidth >= 768) {
@@ -92,6 +96,7 @@ function updateDots(currentPage) {
 
 /**
  * Manages the button states for stage navigation.
+ * @param {*} totalPages - Total number of pages.
  */
 function setButtonState(totalPages) {
   const btnLeft = document.querySelector(".section-chess-stages__arrow-left");
@@ -100,6 +105,8 @@ function setButtonState(totalPages) {
   btnLeft.classList.remove("section-chess-stages__arrow-left--disabled", "section-chess-stages__arrow-left--default");
   btnRight.classList.remove("section-chess-stages__arrow-right--disabled", "section-chess-stages__arrow-right--default");
 
+  //   addTouchEventListener(btnLeft, "section-chess-stages__arrow--touch-hover-effect");
+  // addTouchEventListener(btnRight, "section-chess-stages__arrow--touch-hover-effect")
   let elements = [btnLeft, btnRight];
   elements.forEach((element) => {
     element.classList.remove(
@@ -133,9 +140,8 @@ function setButtonState(totalPages) {
     btnRight.classList.add("section-chess-stages__arrow-right--disabled");
   }
 }
-
 /**
- *
+ * Click left button -pagination
  */
 function clickLeft() {
   document.querySelector(".section-chess-stages__arrow-left").addEventListener("click", () => {
@@ -148,8 +154,7 @@ function clickLeft() {
 }
 
 /**
- *
- * @param {*} totalPages
+ * Click right button -pagination
  */
 function clickRight() {
   document.querySelector(".section-chess-stages__arrow-right").addEventListener("click", () => {
@@ -160,6 +165,7 @@ function clickRight() {
     }
   });
 }
+
 function removeAllEventListeners() {
   const btnLeft = document.querySelector(".section-chess-stages__arrow-left");
   const btnRight = document.querySelector(".section-chess-stages__arrow-right");
@@ -174,7 +180,7 @@ function removeAllEventListeners() {
 /**
  * Counts the number of pages for mobile view.
  * @param {number} totalItems - The number of all cards.
- * @returns {number} - The number of pages.
+ * @returns {number} count- The number of pages.
  */
 export function countPages(totalItems) {
   let count = 0;
@@ -196,7 +202,6 @@ export function countPages(totalItems) {
  * Handles window resize events.
  */
 function handleResize() {
-  console.log("resized");
   totalPages = countPages(stages.length);
   showPageStage(currentPage);
   renderDots(totalPages);

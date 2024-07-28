@@ -1,7 +1,6 @@
-
 /**
  * Adds dynamically the heading text and breaks the lines
- * regarding the viewport size 
+ * regarding the viewport size
  */
 export function applyLineBreaks() {
   const heading = document.querySelector(".section-simultaneous-play__heading");

@@ -10,60 +10,44 @@ import { countPages } from "./scripts/stages/pagination.js";
 import { addTouchEventListener } from "./scripts/touchEventListener.js";
 
 let stagesData = [];
-let btnPrimary = document.querySelector(".btn.btn-primary")
-let btnSecondary= document.querySelector(".btn.btn-secondary")
+let btnPrimary = document.querySelector(".btn.btn-primary");
+let btnSecondary = document.querySelector(".btn.btn-secondary");
+
 document.addEventListener("DOMContentLoaded", async () => {
   try {
+    //Gets data of stages and participants
     const participantsData = await fetchParticipants();
     stagesData = await fetchStages();
-
+    //Sets received data
     setParticipants(participantsData);
-    //test
     setStages(stagesData);
-    //
+    //Displays first page
     showPage(1);
+    //Starts autoslide for the participants
     startAutoSlide();
 
-    // Measure marquee
-    // const measuredWidth = marqueeMeasure();
-    // marqueeKeyframes(measuredWidth);
-
-    const marquees = document.querySelectorAll('.marquee');
-  
+    // Measures marquee
+    const marquees = document.querySelectorAll(".marquee");
     marquees.forEach((marquee, index) => {
       const phraseWidth = marqueeMeasure(`.marquee:nth-of-type(${index + 1})`);
       marqueeKeyframes(phraseWidth, `.marquee:nth-of-type(${index + 1})`, index + 1);
     });
-
-
+    //Displays dynamic sections
     adjustContent();
     applyLineBreaks();
-
-
-
-addTouchEventListener(btnPrimary, "primary-touch-hover-effect");
-addTouchEventListener(btnSecondary, "secondary-touch-hover-effect")
-
-
+    //Adds the touch listener to the banner buttons
+    addTouchEventListener(btnPrimary, "primary-touch-hover-effect");
+    addTouchEventListener(btnSecondary, "secondary-touch-hover-effect");
   } catch (error) {
     console.error("Error fetching data:", error);
   }
-  // handleResize();
 });
 
 function handleResize() {
-
-  // setStages(stagesData);
-
   adjustContent();
   applyLineBreaks();
-
-
   addTouchEventListener(btnPrimary, "primary-touch-hover-effect");
-addTouchEventListener(btnSecondary, "secondary-touch-hover-effect")
-
-
-
+  addTouchEventListener(btnSecondary, "secondary-touch-hover-effect");
 }
 
 window.addEventListener("resize", handleResize);

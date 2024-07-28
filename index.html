@@ -33,12 +33,16 @@
           </h1>
           <p class="site-header__banner-subheading">Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам</p>
           <div class="site-header__banner-buttons">
-            <button class="btn btn-primary">
-              Поддержать <span class="desktop-break"><br /></span> шахматную мысль
-            </button>
-            <button class="btn btn-secondary">
-              Подробнее <span class="desktop-break"><br /></span> о турнире
-            </button>
+            <a href="#dynamic-section">
+              <button class="btn btn-primary">
+                Поддержать <span class="desktop-break"><br /></span> шахматную мысль
+              </button>
+            </a>
+            <a href="#section-simultaneous-play">
+              <button class="btn btn-secondary">
+                Подробнее <span class="desktop-break"><br /></span> о турнире
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -63,7 +67,7 @@
       <div id="dynamic-section"></div>
 
       <!-- Simultaneous Play Session Section -->
-      <section class="section-simultaneous-play">
+      <section class="section-simultaneous-play" id="section-simultaneous-play">
         <div class="section-simultaneous-play__image-wrapper">
           <img src="/assets/men.png" class="section-simultaneous-play__image" alt="Шахматный сеанс с участием гроссмейстера О. Бендера" />
         </div>
@@ -104,10 +108,6 @@
 
       <!-- Chess Stages Section -->
       <section class="section-chess-stages">
-        <!-- <div class="section-chess-stages__header">
-          <h2 class="section-chess-stages__heading">Этапы преображения Васюков</h2>
-          <p class="section-chess-stages__subheading">Будущие источники обогащения васюкинцев</p>
-        </div> -->
         <div class="section-chess-stages__header">
           <h2 class="section-chess-stages__heading">
             <span>Этапы</span>
@@ -146,8 +146,8 @@
       <section class="section-participant-cards" aria-live="polite">
         <div class="section-participant-cards__header">
           <h2 class="section-participant-cards__heading">Участники турнира</h2>
-          
-   <!-- Participant Cards Accordion Controls -->
+
+          <!-- Participant Cards Accordion Controls -->
           <div class="section-participant-cards__accordion-controls">
             <button class="section-participant-cards__arrow-left" aria-label="Предыдущий этап преображения Васюков">
               <img src="assets/arrow.png" alt="Left Arrow" />

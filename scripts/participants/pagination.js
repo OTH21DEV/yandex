@@ -6,6 +6,7 @@ let currentPage = 1;
 
 /**
  * Determines the number of items to display per page based on screen width.
+ * @returns {number} the number of items to display
  */
 function getItemsPerPage() {
   return window.innerWidth >= 768 ? 3 : 1;
@@ -41,8 +42,6 @@ export function showPage(page) {
 function updatePageInfo(itemsPerPage) {
   document.getElementById("section-participant-cards__current-page").textContent = `${Math.min(currentPage * itemsPerPage, participants.length)}`;
   document.getElementById("section-participant-cards__total-pages").textContent = participants.length;
-
-  //   document.getElementById("current-page").textContent = `${Math.min(currentPage * itemsPerPage, participants.length)}/${participants.length}`;
 }
 
 // Left arrow button for pagination

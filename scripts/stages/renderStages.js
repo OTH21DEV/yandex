@@ -3,7 +3,6 @@
  * @param {Array} data - The array containing stages information
  */
 export function renderStages(data) {
-
   const container = document.getElementById("section-chess-stages__container");
   container.innerHTML = "";
 
@@ -20,8 +19,6 @@ export function renderStages(data) {
         <p>${stage.description}</p>
       </div>
     `;
-
-  
     container.appendChild(card);
   });
 }

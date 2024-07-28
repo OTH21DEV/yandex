@@ -21,6 +21,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 h1,
 h2 {
@@ -652,7 +655,7 @@ Large screens
   }
 }
 @media screen and (max-width: 585px) {
-  /* @media screen and (max-width: 376px) { */
+
   /*
   Main Header Section 
   */
@@ -670,9 +673,6 @@ Large screens
     font-size: 14.42px;
     line-height: 15.57px;
   }
-  /* .site-header {
-    background-image: url("/assets/bg_mobile.png");
-  } */
 
   .site-header__banner-heading {
     font-size: 36px;
@@ -733,7 +733,6 @@ Large screens
     height: 38px;
     padding: 10px 12px;
 
-    /* bottom: 0; */
   }
   #marquee-header {
     position: absolute;
@@ -928,7 +927,7 @@ Footer Section
     height: 150px;
   }
   #stage-5 {
-    height: 194.8px;
+    height: 202px;
   }
   #stage-4 {
     height: auto;
@@ -1036,9 +1035,9 @@ Footer Section
 }
 
 @media (max-width: 1365px) and (min-width: 375px) {
-  .section-simultaneous-play__image-wrapper {
+  /* .section-simultaneous-play__image-wrapper {
     width: inherit;
-  }
+  } */
   .image-wrapper {
     margin: 24px 0;
   }

@@ -1,8 +1,7 @@
-
 /**
- * Measure the width of a single marquee element 
+ * Measure the width of a single marquee element
  * ( based on the first three phrases)
- * @param {*} marqueeSelector 
+ * @param {*} marqueeSelector
  * @returns {number} phraseWidth - the calculated width of the marquee (3 phrases) in pixels.
  */
 export function marqueeMeasure(marqueeSelector) {
@@ -17,7 +16,7 @@ export function marqueeMeasure(marqueeSelector) {
 }
 
 /**
- * Generates and applies keyframe animation to 
+ * Generates and applies keyframe animation to
  * scroll marquee content based on its width
  * @param {number} phraseWidth the calculated width of the marquee (3 phrases) in pixels
  * @param {string} marqueeSelector the selector for the marquee element
