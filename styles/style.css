@@ -665,6 +665,10 @@ Large screens
   .section-simultaneous-play__image-wrapper {
     height: 402px;
   }
+     #marquee-header {
+    position: absolute;
+    bottom: 0;
+  } 
 }
 @media screen and (max-width: 585px) {
 
