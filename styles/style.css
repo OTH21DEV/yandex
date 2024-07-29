@@ -720,18 +720,6 @@ Large screens
     opacity: 90%;
   }
 
-  /* .primary-touch-hover-effect {
-    background-color: var(--banner-btn-hover);
-    color: var(--banner-btn);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-  }
-  .secondary-touch-hover-effect {
-    background-color: var(--banner-btn);
-    color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-  } */
 
   .desktop-break {
     display: none;
@@ -746,10 +734,10 @@ Large screens
     padding: 10px 12px;
 
   }
-  #marquee-header {
+  /* #marquee-header {
     position: absolute;
     bottom: 0;
-  }
+  } */
   #marquee-footer {
     margin-top: 80px;
   }
