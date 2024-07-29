@@ -111,8 +111,16 @@ Main Header Section
   font-weight: 500;
   font-size: 16px;
   text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.desktop-break{
+  display:flex;
+}
 .btn.btn-primary {
   background-color: var(--banner-btn);
   color: #ffffff;
