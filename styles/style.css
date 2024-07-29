@@ -684,6 +684,9 @@ Large screens
     position: absolute;
     bottom: 0;
   }
+  #stage-5 {
+    height: 198.8px;
+  }
 }
 @media screen and (max-width: 585px) {
   /*
@@ -750,10 +753,7 @@ Large screens
     height: 38px;
     padding: 10px 12px;
   }
-  /* #marquee-header {
-    position: absolute;
-    bottom: 0;
-  } */
+
   #marquee-footer {
     margin-top: 80px;
   }
@@ -917,7 +917,9 @@ Participant Cards Section
     width: 36px;
     height: 36px;
   }
-
+  #stage-5 {
+    height: 194.8px;
+  }
   /*
 Footer Section
 */
@@ -942,9 +944,7 @@ Footer Section
   #stage-2 {
     height: 150px;
   }
-  #stage-5 {
-    height: 202px;
-  }
+ 
   #stage-4 {
     height: auto;
   }
@@ -1145,4 +1145,5 @@ Footer Section
   .site-header__banner-subheading {
     margin-bottom: 10px;
   }
+
 }
