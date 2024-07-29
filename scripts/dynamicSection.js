@@ -17,7 +17,7 @@ function createMobileView() {
   imageWrapper.className = "image-wrapper";
 
   const image = document.createElement("img");
-  image.src = "/assets/mens.png";
+  image.src = "../assets/mens.png";
   image.alt = "Турнир по шахматам";
   image.className = "section-tournament-support__image";
 
@@ -53,7 +53,7 @@ function createDesktopView() {
   imageWrapper.className = "image-wrapper";
 
   const image = document.createElement("img");
-  image.src = "/assets/mens.png";
+  image.src = "../assets/mens.png";
   image.alt = "Турнир по шахматам";
   image.className = "section-tournament-support__image";
 
