@@ -37,7 +37,6 @@ export function setStages(data) {
  * @param {number} page - The page number to display
  */
 export function showPageStage(page) {
-  console.log(`Showing page ${page}`);
   const itemsPerPage = getItemsPerPage(page);
   if (window.innerWidth <= 768) {
     currentPage = page;

@@ -58,7 +58,7 @@ Main Header Section
   width: 100%;
   height: 700px;
   position: relative;
-  background-image: url("/assets/bg.png");
+  background-image: url("./assets/bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -138,7 +138,18 @@ Main Header Section
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
-
+.primary-touch-hover-effect {
+  background-color: var(--banner-btn-hover);
+  color: var(--banner-btn);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.secondary-touch-hover-effect {
+  background-color: var(--banner-btn);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
 .section-chess-stages__dot {
   height: 10px;
   width: 10px;
@@ -508,7 +519,7 @@ Chess stages Accordion
   padding: 20px;
   box-sizing: border-box;
   display: flex;
-  background-image: url("/assets/card_bg.png");
+  background-image: url("./assets/card_bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -522,7 +533,7 @@ Chess stages Accordion
 #stage-7::after {
   content: "";
   position: absolute;
-  background-image: url("/assets/plane.png");
+  background-image: url("./assets/plane.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -642,13 +653,13 @@ Large screens
 
 @media screen and (min-width: 1920px) {
   .site-header {
-    background-image: url("/assets/bg_large.png");
+    background-image: url("./assets/bg_large.png");
     padding-left: 349px;
   }
 }
 @media screen and (max-width: 376px) {
   .site-header {
-    background-image: url("/assets/bg_mobile.png");
+    background-image: url("./assets/bg_mobile.png");
   }
   .section-simultaneous-play__image-wrapper {
     height: 402px;
@@ -708,7 +719,7 @@ Large screens
     opacity: 90%;
   }
 
-  .primary-touch-hover-effect {
+  /* .primary-touch-hover-effect {
     background-color: var(--banner-btn-hover);
     color: var(--banner-btn);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -719,7 +730,7 @@ Large screens
     color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-  }
+  } */
 
   .desktop-break {
     display: none;
@@ -969,7 +980,7 @@ Footer Section
   #stage-1::after {
     content: "";
     position: absolute;
-    background-image: url("/assets/plane.png");
+    background-image: url("./assets/plane.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

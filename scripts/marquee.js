@@ -69,5 +69,5 @@ export function marqueeKeyframes(phraseWidth, marqueeSelector, index) {
 
   const speed = 50; // px/s
   const duration = phraseWidth / speed;
-  marqueeContent.style.animation = `ticker-${index} ${duration}s linear infinite`;
+ marqueeContent.style.animation = `ticker-${index} ${duration}s linear infinite`;
 }
