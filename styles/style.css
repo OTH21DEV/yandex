@@ -534,7 +534,7 @@ Chess stages Accordion
   content: "";
   position: absolute;
   background-image: url("../assets/plane.png");
- 
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -657,6 +657,13 @@ Large screens
     background-image: url("../assets/bg_large.png");
     padding-left: 349px;
   }
+  .section-chess-stages__stage-content p {
+    width: 100%;
+  }
+
+  .section-chess-stages__container .section-chess-stages__stage-item:last-child .section-chess-stages__stage-content p {
+    width: 60%;
+  }
 }
 @media screen and (max-width: 376px) {
   .site-header {
@@ -665,13 +672,12 @@ Large screens
   .section-simultaneous-play__image-wrapper {
     height: 402px;
   }
-     #marquee-header {
+  #marquee-header {
     position: absolute;
     bottom: 0;
-  } 
+  }
 }
 @media screen and (max-width: 585px) {
-
   /*
   Main Header Section 
   */
@@ -724,7 +730,6 @@ Large screens
     opacity: 90%;
   }
 
-
   .desktop-break {
     display: none;
   }
@@ -736,7 +741,6 @@ Large screens
   .marquee {
     height: 38px;
     padding: 10px 12px;
-
   }
   /* #marquee-header {
     position: absolute;
@@ -1094,13 +1098,12 @@ Footer Section
   .text-wrapper {
     flex-direction: column;
   }
-  .section-chess-stages__container .section-chess-stages__stage-item:last-child .section-chess-stages__stage-content p{
-    width:inherit
+  .section-chess-stages__container .section-chess-stages__stage-item:last-child .section-chess-stages__stage-content p {
+    width: inherit;
   }
   #stage-7 {
-    height:300px
+    height: 300px;
   }
-
 }
 
 @media (min-width: 375px) and (max-width: 680px) {
